@@ -15,6 +15,20 @@ header
     padding: 10px;
 }
 
+#msg
+{
+	margin: 150px 500px;
+	padding: 20px 20px;
+	font-size: 30px;
+	height: auto;
+	font-color: white;
+	background-color: lime;
+	position: fixed;
+	display: none;
+	z-index:14;
+	border-radius: 6px;
+}
+
 header ul
 {
     background-color: #333;
@@ -68,10 +82,16 @@ a.visited
 
 #msg
 {
-	margin:150px;
-	padding: auto auto;
-	font-size: 20px;
+	margin: 150px 500px;
+	padding: 20px 20px;
+	font-size: 30px;
 	height: auto;
+	font-color: white;
+	background-color: lime;
+	position: fixed;
+	display: none;
+	z-index:14;
+	border-radius: 6px;
 }
 
 #products
@@ -147,7 +167,7 @@ a.visited
     z-index: 9;
     position: fixed;
     padding: 20px;
-    margin: 1px;
+    margin: 55px 15px;
 }
 
 #prodinfocus img

@@ -45,7 +45,7 @@ function addToCart()
     {	
         if (xhttp.readyState == 4 && xhttp.status == 200)
         {
-        	alert("added to cart");
+        	showMessage("Item added to cart");
         }
     };
     xhttp.setRequestHeader('Content-Type', 'application/json');
@@ -220,7 +220,7 @@ function removeFromCart()
     {	
         if (xhttp.readyState == 4 && xhttp.status == 200)
          {
-        	
+        	showMessage("Item removed from cart"); 
          }
     };
     xhttp.setRequestHeader('Content-Type', 'application/json');
@@ -239,7 +239,7 @@ function removeFromWishlist()
     {	
         if (xhttp.readyState == 4 && xhttp.status == 200)
          {
-        	
+        	showMessage("Item removed from wishlist"); 
          }
     };
     xhttp.setRequestHeader('Content-Type', 'application/json');

@@ -1,4 +1,14 @@
 
+function showMessage(msg)
+{
+	document.getElementById("msg").style = "display:block";
+    document.getElementById("msg").innerHTML =msg;
+    setTimeout(function() {
+      document.getElementById("msg").style = "display:none";
+    }, 3000);
+}
+
+
 function loadProducts()
 {	 
 	var xhttp=new XMLHttpRequest();

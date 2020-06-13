@@ -29,7 +29,9 @@ function openSignup()
 
 function  addToCart()
 {
+	showMessage("You have to login first")
 	openLogin();
+	
 }
 
 

@@ -3,7 +3,7 @@ package com.grostory.bean;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="customer")
-public class Customer {
+public class Customer implements Comparable<Customer> {
 
 	private int customerId;
 	private String customerName,username,password;
@@ -58,4 +58,32 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + customerId;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		if (customerId != other.customerId)
+			return false;
+		return true;
+	}
+	@Override
+	public int compareTo(Customer o) {
+		// TODO Auto-generated method stub
+		return this.getCustomerId()-o.getCustomerId();
+	}
+	
+	
+	
 }

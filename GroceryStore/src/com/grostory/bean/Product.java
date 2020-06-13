@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.grostory.util.Category;
 
 @XmlRootElement(name="product")
-public class Product 
+public class Product implements Comparable<Product>
 {
 	private int quantityInStock,productId;
 	private String productName,description;
@@ -85,6 +85,36 @@ public class Product
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
 
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + productId;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		if (productId != other.productId)
+			return false;
+		return true;
+	}
+
+
+	@Override
+	public int compareTo(Product o) {
+		return this.getProductId()-o.getProductId();
+	}
+	
+	
 }
