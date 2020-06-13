@@ -1,6 +1,9 @@
 var li;
 var current;
 var baseURL;
+var account;
+
+
 window.onload = function()
 {
 	current=window.location.href;
@@ -9,7 +12,8 @@ window.onload = function()
 	li=baseURL+"home/users/"+uname;
 	//console.log(li);
 	loadProducts();
-	
+
+	setProfile();
 }
 
 
@@ -112,6 +116,7 @@ function getWishlist()
     };
     xhttp.send();
 }
+var totalPrice=0;
 
 function getCart()
 {
@@ -125,7 +130,7 @@ function getCart()
         	res=JSON.parse(this.responseText);
         	var inp="<input id='c' type='hidden' value='"+JSON.stringify(res)+"'/>";
         	var div;
-        	var totalPrice=0;
+        	totalPrice=0;
         	if(res.length==0)
 			{
         		div+="<h2>Nothing to see here</h2>";
@@ -214,15 +219,13 @@ function setProfile()
         if (xhttp.readyState == 4 && xhttp.status == 200)
          {
         	res=JSON.parse(this.responseText);
+        	account=res;
          }
     };
     xhttp.send();
-    return res;
 }
 
-var account;
 
-account=setProfile();
 
 function getProfile()
 {
@@ -279,9 +282,13 @@ function removeFromWishlist()
 
 function orderNow()
 {
-	window.open("payuform.jsp","_self");
 	
-/*	var prod=document.getElementById("c").value;
+	post("payuform.jsp",{ 'amount': totalPrice, 'firstname': account.customerName, 'email': account.email,
+		'phone': account.contact, 'productinfo': "Grocery Items"});
+	
+	localStorage.setItem("cart",document.getElementById("c").value);
+	localStorage.setItem("customer",account.customerName);
+	/*var prod=document.getElementById("c").value;
 	//console.log(prod);
 	var res;
 	var xhttp=new XMLHttpRequest();
@@ -297,4 +304,27 @@ function orderNow()
 	xhttp.send(prod);*/
     
 }
+
+function post(path, params, method='post') {
+
+	  // The rest of this code assumes you are not using a library.
+	  // It can be made less wordy if you use one.
+	  const form = document.createElement('form');
+	  form.method = method;
+	  form.action = path;
+
+	  for (const key in params) {
+	    if (params.hasOwnProperty(key)) {
+	      const hiddenField = document.createElement('input');
+	      hiddenField.type = 'hidden';
+	      hiddenField.name = key;
+	      hiddenField.value = params[key];
+
+	      form.appendChild(hiddenField);
+	    }
+	  }
+
+	  document.body.appendChild(form);
+	  form.submit();
+	}
 

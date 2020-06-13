@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Transaction Failure</title>
+</head>
+<body>
+<h1>Transaction Failed, please wait while we redirect</h1>
+<script>
+window.onload=function()
+{
+	var username=localStorage.getItem(customer);
+	window.open("Dashboard.html?"+username,"_self");
+}
+</script>
+
+</body>
+</html>

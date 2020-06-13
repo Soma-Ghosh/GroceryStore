@@ -5,8 +5,25 @@
 <title>Successful Transaction</title>
 <script>
 
-window.onload= function()
+window.onload=function()
 {
+	
+	var prod=localStorage.getItem(cart);
+	var username=localStorage.getItem(customer);
+	//console.log(prod);
+	var res;
+	var xhttp=new XMLHttpRequest();
+	xhttp.open("POST",li+"/orders",true);
+	xhttp.onreadystatechange = function () 
+	{	
+	    if (xhttp.readyState == 4 && xhttp.status == 200)
+	     {
+	    	window.open("Dashboard.html?"+username,"_self");
+	     }
+	};
+	xhttp.setRequestHeader('Content-Type', 'application/json');
+	xhttp.send(prod);
+	
 	
 }
 

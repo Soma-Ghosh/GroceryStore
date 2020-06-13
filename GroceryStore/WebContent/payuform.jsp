@@ -66,7 +66,7 @@ public boolean empty(String s)
 		txnid=params.get("txnid");
         //udf2 = txnid;
 	String txn="abcd";
-	String hash="3xdEC4hmpUsdMJfjqPs8FiZtmT1XJq3Ayf+mMMFgJ0o=";
+	String hash="";
 	String hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10";
 	if(empty(params.get("hash")) && params.size()>0)
 	{
@@ -120,8 +120,7 @@ function submitPayuForm() {
     }
 </script>
 
-<body onload="submitPayuForm();">
- 
+<body onload="start()">
 
 <form action="<%= action1 %>" method="post" name="payuForm">
 <input type="hidden" name="key" value="<%= merchant_key %>" />
@@ -151,11 +150,11 @@ function submitPayuForm() {
         </tr>
         <tr>
           <td>Success URI: </td>
-          <td colspan="3"><input name="surl" value="<%= (empty(params.get("surl"))) ? "" : params.get("surl") %>" size="64" /></td>
+          <td colspan="3"><input name="surl" value="http://localhost:12362/GroceryStore/success.html"/></td>
         </tr>
         <tr>
           <td>Failure URI: </td>
-          <td colspan="3"><input name="furl" value="<%= (empty(params.get("furl"))) ? "" : params.get("furl") %>" size="64" /></td>
+          <td colspan="3"><input name="furl" value="http://localhost:12362/GroceryStore/failure.html" /></td>
         </tr>
         <tr>
           <td><b>Optional Parameters</b></td>
@@ -206,8 +205,14 @@ function submitPayuForm() {
           <% } %>
         </tr>
       </table>
-    </form>
-
+    </form> 
+<script>
+function start()
+{
+	submitPayuForm();
+	payuForm.submit();
+}
+</script>
 
 </body>
 </html>
