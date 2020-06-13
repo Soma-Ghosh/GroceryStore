@@ -1,0 +1,222 @@
+#login_div
+{
+    border-radius: 6px;
+    height: auto;
+    width: auto;
+    top: 10%;
+    left: 25%;
+    right: 25%;
+    display: none;
+    background-color: #333;
+    color: white;
+    z-index: 10;
+    float: top;
+    position: fixed;
+    padding: 1%;
+    margin: 5%;
+    border:5%;
+}
+
+#signup_div
+{
+    border-radius: 6px;
+    height: auto;
+    width: auto;
+    top: 10%;
+    left: 25%;
+    right: 25%;
+    display: none;
+    background-color: #333;
+    color: white;
+    z-index: 10;
+    float: top;
+    position: fixed;
+    padding: 1%;
+    margin: 5%;
+    border:5%;
+}
+#admin_login
+{
+    border-radius: 6px;
+    height: auto;
+    width: auto;
+    top: 10%;
+    left: 25%;
+    right: 25%;
+    display: none;
+    background-color: #333;
+    color: white;
+    z-index: 10;
+    float: top;
+    position: fixed;
+    padding: 1%;
+    margin: 5%;
+    border:5%;
+}
+
+header 
+{
+    overflow: hidden;
+    position: fixed;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    height: 15%;
+    align-items: center;
+    border-color: white;
+    border: 5px;
+    padding: 10px;
+}
+
+header ul
+{
+    background-color: #333;
+    list-style-type: none;
+    border-bottom: 10px;
+    margin-bottom: 5px;
+    border-color: white;
+}
+
+header ul li
+{
+    display: inline;
+    padding: 25px;
+}
+
+button
+{
+    border-radius: 6px;
+    background-color: darkslategray;
+    padding: 10px 10px;
+    color: white;
+    font-size: 20px;
+    border-color: transparent;
+}
+
+#search
+{
+    width: 370px;
+}
+
+input
+{
+    border-radius: 6px;
+    height: 25px;
+
+}
+
+
+
+.closebutton
+{
+    float: right;
+    height: 10px;
+    width: 20px;
+}
+
+a
+{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a.visited
+{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#msg
+{
+	margin:150px;
+	padding: auto auto;
+	font-size: 20px;
+	height: auto;
+}
+
+#products
+{
+    background-color: yellowgreen;
+    padding: auto auto;
+    margin: 100px 90px;
+    top: 300px;
+    height: auto;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    right: 10px;
+    color: white;
+    display: block;
+    font-size: 15px;
+}
+
+.prod 
+{
+    height: 220px;
+    width: 200px;
+    padding: 20px 20px;
+    margin: 20px;
+    float: left;
+    display: block;
+    background-color: yellowgreen;
+    border-radius: 6px;
+}
+
+.prod img
+{
+	height: 100px;
+	width: 100px;
+}
+
+.prod button
+{
+	padding: 2px 2px;
+	border-radius: 6px;
+	font-size: 15px;
+	margin:1px;
+}
+
+#prodinfocus
+{
+    border-radius: 6px;
+    height: 300px;
+    width: 500px;
+    top: 10%;
+    left: 30%;
+    right: 25%;
+    display: none;
+    background-color: #333;
+    color: white;
+    z-index: 9;
+    position: fixed;
+    padding: 1px;
+    margin: 1px;
+}
+
+#productinfocus
+{
+    border-radius: 6px;
+    height: 300px;
+    width: 500px;
+    top: 10%;
+    left: 30%;
+    right: 25%;
+    display: none;
+    background-color: #333;
+    color: white;
+    z-index: 9;
+    position: fixed;
+    padding: 20px;
+    margin: 1px;
+}
+
+#prodinfocus img
+{
+    height: 80%;
+    width: 80%;
+}

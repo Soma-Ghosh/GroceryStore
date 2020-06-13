@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Grocery Store - Dashboard</title>
+<link rel="icon" type="image/png" href="./images/logo.png">
+<link rel="stylesheet" href="./CSS/dashboardStyle.css">
+<script src="Scripts/dashboardScript.js" type="text/javascript"></script>
+<script src="Scripts/commonScript.js" type="text/javascript"></script>
+</head>
+<body>
+	<header align="center">
+		<ul>
+			<li id="logo"><img height=25 width=25 src="./images/logo.png" alt=""></li>
+			<li ><input id="search" type="text" placeholder="Search for products..."/></li>
+			<li><a onclick="getProfile()">PROFILE</a></li>
+			<li><a onclick="getWishlist()">WISHLIST</a></li>
+			<li><a onclick="getCart()">CART</a></li>
+			<li><a onclick="getOrder()">ORDERS</a></li>
+			<li><a href="./">LOGOUT</a></li>
+		</ul>
+		<ul>
+			<li><a href="">HOME</a></li>
+			<li><a onclick="getByCategory(this.text)">BEVERAGES</a></li>
+			<li><a onclick="getByCategory(this.text)">BAKERY</a></li>
+			<li><a onclick="getByCategory(this.text)">DAIRY</a></li>
+			<li><a onclick="getByCategory(this.text)">TOILETRIES</a></li>
+		</ul>
+	</header>
+	<div id="msg"></div>
+<div id="products" align="center">
+</div>
+<div id="productinfocus"></div>
+
+</body>
+</html>
