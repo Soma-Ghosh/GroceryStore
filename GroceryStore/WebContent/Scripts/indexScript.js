@@ -34,6 +34,13 @@ function  addToCart()
 	
 }
 
+function  addToWishlist()
+{
+	showMessage("You have to login first")
+	openLogin();
+	
+}
+
 
 function login()
 {

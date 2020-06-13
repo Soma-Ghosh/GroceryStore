@@ -23,20 +23,30 @@ function addToWishlist()
     {	
         if (xhttp.readyState == 4 && xhttp.status == 200)
          {
-        	alert("added to wishlists");
+        	
          }
     };
     xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send(prod);
-
+    showMessage("Item added to wishlists");
+    getWishlist();
 }
 
-function addToCart()
+function addToCart(from)
 {
 	//console.log(event.target.parentNode.getElementsByTagName("INPUT")[0].value);
 	var prod=event.target.parentNode.getElementsByTagName("INPUT")[0].value;
-	var qty=prompt("Quantity");
-	var map={ product: JSON.parse(prod) ,quantity : qty};
+	var qty=event.target.parentNode.getElementsByClassName("qty")[0].value;
+	
+	if(qty=="Quantity")
+		{
+			showMessage("Please select quantity");
+		}
+	else
+		{
+		
+		
+	var map={ product: JSON.parse(prod) ,quantity : parseInt(qty,10)};
 	//console.log(map);		
 	
 	var xhttp=new XMLHttpRequest();
@@ -45,11 +55,19 @@ function addToCart()
     {	
         if (xhttp.readyState == 4 && xhttp.status == 200)
         {
-        	showMessage("Item added to cart");
+        	
         }
     };
     xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send(JSON.stringify(map));
+    showMessage("Item added to cart");
+    if(from=="prodinfocus")
+	{
+    	close_div();
+	}
+    
+    getCart();
+		}
 }
 
 function getWishlist()
@@ -80,6 +98,7 @@ function getWishlist()
             			 "<p> Rs. "+res[i].price+"</p>"+
             			 "<p>"+res[i].category+"</p>"+
             			 "<input type='hidden' value='"+JSON.stringify(res[i])+"'>"+
+            			 "<select class='qty'  value='Quantity'><option>Quantity</option><option>1</option><option>2</option><option>3</option></select>"+
             			 "<button onclick='removeFromWishlist()'> Remove from Wishlist </button>"+
             			 "<button onclick='addToCart()'> Add to Cart </button>"+
             			 "</div>";
@@ -184,7 +203,8 @@ function getOrder()
 }
 
 
-function getProfile()
+
+function setProfile()
 {
 	var res;
 	var xhttp=new XMLHttpRequest();
@@ -194,20 +214,30 @@ function getProfile()
         if (xhttp.readyState == 4 && xhttp.status == 200)
          {
         	res=JSON.parse(this.responseText);
-        	var div;
-        	div+="<div class='profile' align='left'>" +
-			 "<p> Name : "+res.customerName+"</p>" +
-			 "<p> Email : "+res.email+"</p>"+
-			 "<p> Phone Number : "+res.contact+"</p>"+
-			 "<p> Address : "+res.address.location+", "+res.address.city+", "+res.address.state+", "+res.address.pincode+" </p>"+
-			 "</div>";
-        	document.getElementById("products").innerHTML=div;
-        	document.getElementById("products").childNodes[0].remove();
-
          }
     };
     xhttp.send();
+    return res;
 }
+
+var account;
+
+account=setProfile();
+
+function getProfile()
+{
+	var res=account;
+	var div;
+	div+="<div class='profile' align='left'>" +
+	 "<p> Name : "+res.customerName+"</p>" +
+	 "<p> Email : "+res.email+"</p>"+
+	 "<p> Phone Number : "+res.contact+"</p>"+
+	 "<p> Address : "+res.address.location+", "+res.address.city+", "+res.address.state+", "+res.address.pincode+" </p>"+
+	 "</div>";
+	document.getElementById("products").innerHTML=div;
+	document.getElementById("products").childNodes[0].remove();	
+}
+
 
 function removeFromCart()
 {
@@ -249,20 +279,22 @@ function removeFromWishlist()
 
 function orderNow()
 {
-	var prod=document.getElementById("c").value;
+	window.open("payuform.jsp","_self");
+	
+/*	var prod=document.getElementById("c").value;
 	//console.log(prod);
 	var res;
 	var xhttp=new XMLHttpRequest();
-    xhttp.open("POST",li+"/orders",true);
-    xhttp.onreadystatechange = function () 
-    {	
-        if (xhttp.readyState == 4 && xhttp.status == 200)
-         {
-        	
-         }
-    };
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.send(prod);
-    getCart();
+	xhttp.open("POST",li+"/orders",true);
+	xhttp.onreadystatechange = function () 
+	{	
+	    if (xhttp.readyState == 4 && xhttp.status == 200)
+	     {
+	    	
+	     }
+	};
+	xhttp.setRequestHeader('Content-Type', 'application/json');
+	xhttp.send(prod);*/
+    
 }
 

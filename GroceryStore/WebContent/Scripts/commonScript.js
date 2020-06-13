@@ -25,7 +25,8 @@ function loadProducts()
 			{
 				div+="<div class='prod'>" +
 					 "<img src='"+baseURL+prod[i].image+"' alt=''/>" +
-					 "<p>"+prod[i].productName+"</p><p>"+prod[i].price+"</p>"+
+					 "<p>"+prod[i].productName+"</p><p>Rs. "+prod[i].price+"</p>"+
+					 "<select class='qty'  value='Quantity'><option>Quantity</option><option>1</option><option>2</option><option>3</option></select>"+
 					 "<button id="+prod[i].category+"/"+prod[i].productId+" onclick='openProduct()'>View Details</button>"+
 					 "<input type='hidden' value='"+JSON.stringify(prod[i])+"'>"+
 					 "<button onclick='addToCart()'>Add to Cart</button></div>";
@@ -89,7 +90,8 @@ function getByCategory(category)
 				div+="<div class='prod'>" +
 						"<img src='"+baseURL+prod[i].image+"' alt=''/>" +
 						"<p>"+prod[i].productName+"</p>" +
-						"<p>"+prod[i].price+"</p>"+
+						"<p>Rs. "+prod[i].price+"</p>"+
+						"<select class='qty'  value='Quantity'><option>Quantity</option><option>1</option><option>2</option><option>3</option></select>"+
 						"<button id='"+prod[i].category+"/"+prod[i].productId+"' onclick='openProduct()'>View Details</button>"+
 						"<input type='hidden' value='"+JSON.stringify(prod[i])+"'>"+
 				        "<br><button onclick='addToCart()'>Add to Cart</button></div>";
@@ -118,12 +120,13 @@ function openProduct()
 			var div;
 			div+="<div class='prodinfocus' align='center'>" +
 				 "<img height=120 width=120 src='"+baseURL+prod.image+"' alt='image'/>" +
-				 "<p>"+prod.productName+"</p><p>"+prod.price+"</p>" +
+				 "<p>"+prod.productName+"</p><p>Rs. "+prod.price+"</p>" +
+				 "<select class='qty'  value='Quantity'><option>Quantity</option><option>1</option><option>2</option><option>3</option></select>"+
 				 "<p>"+prod.description+"</p>"+
 				 "<input type='hidden' value='"+JSON.stringify(prod)+"'>" +
 				 "<button onclick='close_div()'>Back</button> " +
 				 "<button onclick='addToWishlist()'>Add to Wishlist</button> "+
-				 " <button onclick='addToCart()'>Add to Cart</button></div>";
+				 " <button onclick=addToCart('prodinfocus')>Add to Cart</button></div>";
 			document.getElementById("productinfocus").innerHTML=div;
 			document.getElementById("productinfocus").style.display="block";
 			document.getElementById("productinfocus").childNodes[0].remove();

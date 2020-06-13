@@ -96,6 +96,16 @@ button
     border-color: transparent;
 }
 
+select
+{
+    border-radius: 6px;
+    background-color: darkslategray;
+    padding: 5px 10px;
+    color: white;
+    font-size: 20px;
+    border-color: transparent;
+}
+
 #search
 {
     width: 370px;
@@ -187,10 +197,18 @@ a.visited
 	margin:1px;
 }
 
+.prod select
+{
+	padding: 2px 2px;
+	border-radius: 6px;
+	font-size: 15px;
+	margin:1px;
+}
+
 #prodinfocus
 {
     border-radius: 6px;
-    height: 300px;
+    height: 350px;
     width: 500px;
     top: 10%;
     left: 30%;
@@ -207,7 +225,7 @@ a.visited
 #productinfocus
 {
     border-radius: 6px;
-    height: 300px;
+    height: 350px;
     width: 500px;
     top: 10%;
     left: 30%;
