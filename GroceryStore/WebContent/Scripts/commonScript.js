@@ -8,7 +8,10 @@ function showMessage(msg)
     }, 3000);
 }
 
-
+function storeLocator()
+{
+	window.open("./StoreLocatorindex.html","_blank");
+}
 function loadProducts()
 {	 
 	var xhttp=new XMLHttpRequest();
