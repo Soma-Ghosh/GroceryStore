@@ -130,80 +130,37 @@ function submitPayuForm() {
 	  <input type="hidden" name="service_provider" value="payu_paisa" />
       <table>
         <tr>
-          <td><b>Mandatory Parameters</b></td>
+<td><b>Redirecting...</b></td>
         </tr>
         <tr>
-          <td>Amount: </td>
-          <td><input name="amount" value="<%= (empty(params.get("amount"))) ? "" : params.get("amount") %>" /></td>
-          <td>First Name: </td>
-          <td><input name="firstname" id="firstname" value="<%= (empty(params.get("firstname"))) ? "" : params.get("firstname") %>" /></td>
+          <td></td>
+          <td><input type="hidden" name="amount" value="<%= (empty(params.get("amount"))) ? "" : params.get("amount") %>" /></td>
+          <td></td>
+          <td><input type="hidden" name="firstname" id="firstname" value="<%= (empty(params.get("firstname"))) ? "" : params.get("firstname") %>" /></td>
         </tr>
         <tr>
-          <td>Email: </td>
-          <td><input name="email" id="email" value="<%= (empty(params.get("email"))) ? "" : params.get("email") %>" /></td>
-          <td>Phone: </td>
-          <td><input name="phone" value="<%= (empty(params.get("phone"))) ? "" : params.get("phone") %>" /></td>
+          <td></td>
+          <td><input type="hidden" name="email" id="email" value="<%= (empty(params.get("email"))) ? "" : params.get("email") %>" /></td>
+          <td></td>
+          <td><input type="hidden" name="phone" value="<%= (empty(params.get("phone"))) ? "" : params.get("phone") %>" /></td>
         </tr>
         <tr>
-          <td>Product Info: </td>
-          <td colspan="3"><input name="productinfo" value="<%= (empty(params.get("productinfo"))) ? "" : params.get("productinfo") %>" size="64" /></td>
+          <td></td>
+          <td colspan="3"><input type="hidden" name="productinfo" value="<%= (empty(params.get("productinfo"))) ? "" : params.get("productinfo") %>" size="64" /></td>
         </tr>
         <tr>
-          <td>Success URI: </td>
-          <td colspan="3"><input name="surl" value="http://localhost:12362/GroceryStore/success.html"/></td>
+          <td></td>
+          <td colspan="3"><input type="hidden" name="surl" value="http://localhost:12362/GroceryStore/success.html"/></td>
         </tr>
         <tr>
-          <td>Failure URI: </td>
-          <td colspan="3"><input name="furl" value="http://localhost:12362/GroceryStore/failure.html" /></td>
+          <td></td>
+          <td colspan="3"><input type="hidden" name="furl" value="http://localhost:12362/GroceryStore/failure.html" /></td>
         </tr>
         <tr>
-          <td><b>Optional Parameters</b></td>
-        </tr>
-        <tr>
-          <td>Last Name: </td>
-          <td><input name="lastname" id="lastname" value="<%= (empty(params.get("lastname"))) ? "" : params.get("lastname") %>" /></td>
-          <td>Cancel URI: </td>
-          <td><input name="curl" value="" /></td>
-        </tr>
-        <tr>
-          <td>Address1: </td>
-          <td><input name="address1" value="<%= (empty(params.get("address1"))) ? "" : params.get("address1") %>" /></td>
-          <td>Address2: </td>
-          <td><input name="address2" value="<%= (empty(params.get("address2"))) ? "" : params.get("address2") %>" /></td>
-        </tr>
-        <tr>
-          <td>City: </td>
-          <td><input name="city" value="<%= (empty(params.get("city"))) ? "" : params.get("city") %>" /></td>
-          <td>State: </td>
-          <td><input name="state" value="<%= (empty(params.get("state"))) ? "" : params.get("state") %>" /></td>
-        </tr>
-        <tr>
-          <td>Country: </td>
-          <td><input name="country" value="<%= (empty(params.get("country"))) ? "" : params.get("country") %>" /></td>
-          <td>Zipcode: </td>
-          <td><input name="zipcode" value="<%= (empty(params.get("zipcode"))) ? "" : params.get("zipcode") %>" /></td>
-        </tr>
-        <tr>
-          <td>UDF1: </td>
-          <td><input name="udf1" value="<%= (empty(params.get("udf1"))) ? "" : params.get("udf1") %>" /></td>
-          
-        <tr>
-          <td>UDF3: </td>
-          <td><input name="udf3" value="<%= (empty(params.get("udf3"))) ? "" : params.get("udf3") %>" /></td>
-          <td>UDF4: </td>
-          <td><input name="udf4" value="<%= (empty(params.get("udf4"))) ? "" : params.get("udf4") %>" /></td>
-        </tr>
-        <tr>
-          <td>UDF5: </td>
-          <td><input name="udf5" value="<%= (empty(params.get("udf5"))) ? "" : params.get("udf5") %>" /></td>
-          <td>PG: </td>
-          <td><input name="pg" value="<%= (empty(params.get("pg"))) ? "" : params.get("pg") %>" /></td>
-        </tr>
-        <tr>
-          <% if(empty(hash)){ %>
-            <td colspan="4"><input type="submit" value="Submit" /></td>
+                <% if(empty(hash)){ %>
+            <td colspan="4"><input type="hidden" type="submit" value="Submit" /></td>
           <% } %>
-        </tr>
+        </tr> 
       </table>
     </form> 
 <script>

@@ -43,35 +43,34 @@ function addToCart(from)
 	var qty=event.target.parentNode.getElementsByClassName("qty")[0].value;
 	
 	if(qty=="Quantity")
-		{
-			showMessage("Please select quantity");
-		}
-	else
-		{
-		
-		
-	var map={ product: JSON.parse(prod) ,quantity : parseInt(qty,10)};
-	//console.log(map);		
-	
-	var xhttp=new XMLHttpRequest();
-    xhttp.open("POST",li+"/carts",true);
-    xhttp.onreadystatechange = function () 
-    {	
-        if (xhttp.readyState == 4 && xhttp.status == 200)
-        {
-        	
-        }
-    };
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.send(JSON.stringify(map));
-    showMessage("Item added to cart");
-    if(from=="prodinfocus")
 	{
-    	close_div();
+		showMessage("Please select quantity");
 	}
-    
-    getCart();
+	else
+	{
+		
+		var map={ product: JSON.parse(prod) ,quantity : parseInt(qty,10)};
+		//console.log(map);		
+		
+		var xhttp=new XMLHttpRequest();
+	    xhttp.open("POST",li+"/carts",true);
+	    xhttp.onreadystatechange = function () 
+	    {	
+	        if (xhttp.readyState == 4 && xhttp.status == 200)
+	        {
+	        	
+	        }
+	    };
+	    xhttp.setRequestHeader('Content-Type', 'application/json');
+	    xhttp.send(JSON.stringify(map));
+	    showMessage("Item added to cart");
+	    getCart();
+	    if(from=="prodinfocus")
+		{
+	    	close_div();
 		}
+    
+	}
 }
 
 function getWishlist()
