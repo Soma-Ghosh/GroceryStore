@@ -284,10 +284,10 @@ function orderNow()
 {
 	
 	post("payuform.jsp",{ 'amount': totalPrice, 'firstname': account.customerName, 'email': account.email,
-		'phone': account.contact, 'productinfo': "Grocery Items"});
-	
-	localStorage.setItem("cart",document.getElementById("c").value);
-	localStorage.setItem("customer",account.customerName);
+	'phone': account.contact, 'productinfo': "Grocery Items"});
+	//window.open("success.html","_blank");
+	localStorage["cart"]=document.getElementById("c").value;
+	localStorage["customer"]=JSON.stringify({ 'username': account.username});
 	/*var prod=document.getElementById("c").value;
 	//console.log(prod);
 	var res;

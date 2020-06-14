@@ -9,8 +9,9 @@
 <script>
 window.onload=function()
 {
-	var username=localStorage.getItem(customer);
-	window.open("Dashboard.html?"+username,"_self");
+	var user=JSON.parse(localStorage["customer"]);
+	
+	window.open("Dashboard.html?"+user.username,"_self");
 }
 </script>
 
