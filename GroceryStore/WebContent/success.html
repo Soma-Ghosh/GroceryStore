@@ -4,7 +4,10 @@
 <meta charset="ISO-8859-1">
 <title>Successful Transaction</title>
 <script>
-
+function printInvoice()
+{
+	window.open("invoice.html","_blank");	
+}
 window.onload=function()
 {
 	var current=window.location.href;
@@ -36,5 +39,6 @@ window.onload=function()
 </head>
 <body>
 <h1>Please wait a while, while me redirect</h1>
+<button onclick="printInvoice();">Print Invoice ?</button>
 </body>
 </html>

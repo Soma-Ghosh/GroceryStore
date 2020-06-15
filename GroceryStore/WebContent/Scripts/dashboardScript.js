@@ -175,7 +175,7 @@ function getOrder()
          {
         	res=JSON.parse(this.responseText);
         	var div;
-        	var div;
+        	
         	if(res.length==0)
 			{
         		div+="<h2>Nothing to see here</h2>";
@@ -286,7 +286,7 @@ function orderNow()
 	'phone': account.contact, 'productinfo': "Grocery Items"});
 	//window.open("success.html","_blank");
 	localStorage["cart"]=document.getElementById("c").value;
-	localStorage["customer"]=JSON.stringify({ 'username': account.username});
+	localStorage["customer"]=JSON.stringify(account);
 	/*var prod=document.getElementById("c").value;
 	//console.log(prod);
 	var res;
