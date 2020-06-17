@@ -8,6 +8,7 @@ function printInvoice()
 {
 	window.open("invoice.html","_blank");	
 }
+var UserName;
 window.onload=function()
 {
 	var current=window.location.href;
@@ -30,15 +31,21 @@ window.onload=function()
 	};
 	xhttp.setRequestHeader('Content-Type', 'application/json');
 	xhttp.send(prod);
-	window.open("Dashboard.html?"+user.username,"_self");
+	UserName=user.username;
+	
 	
 }
-
+function back()
+{
+	window.open("Dashboard.html?"+UserName,"_self");
+	}
 </script>
 
 </head>
 <body>
 <h1>Please wait a while, while me redirect</h1>
 <button onclick="printInvoice();">Print Invoice ?</button>
+
+<a onclick="back();">Continue Shopping</a>
 </body>
 </html>
